@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        tr:nth-child(even) {
+            background-color: teal;
+        }
+        tr:nth-child(odd) {
+            background-color: gainsboro;
+        }
+        table {
+            border-collapse: collapse;
+            background-color: white;
+            width: 90%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        </style>
+    </head>
+    <body>
+        <div style="width: 100%;">
+            <div style="text-align: center; padding-left: 50px;">            
+                <h3 style="color: midnightblue; font-size: xx-large;">Student Report</h5>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Total Marks</th>
+                        <th>CPGA</th>
+                    </tr>
+                <% if (students.length > 0) { %>
+                    <% students.forEach(student => {%>
+                       <tr>
+                           <td><%= student.name %></td>
+                           <td><%= student.email %></td>
+                           <td><%= student.contact %></td>
+                           <td><%=student.totalmarks %></td>
+                           <td><%=student.cgpa %></td>
+                        </tr>
+                    <%  });%>
+                <% }%>
+                </table>
+             </div>
+        </div>
+    </body>
+</html>
